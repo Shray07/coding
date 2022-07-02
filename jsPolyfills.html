@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    // mymap
+
+    Array.prototype.myMap = function (func) {
+        let arr1 = this
+        newarr = []
+        for (var i = 0; i < arr1.length; i++) {
+            let element = arr1[i]
+            let x = func(element)
+
+            newarr.push(x)
+        }
+        return newarr
+    }
+
+    let x = arr.myMap(function (el) {
+        return el * 2
+    })
+    console.log(x)
+
+    //myFilter
+
+    Array.prototype.myFilter = function (el) {
+        let arr4 = this;
+        var newarr = []
+        for (var i = 0; i < arr4.length; i++) {
+            //   let x=el%2!=0
+            if (arr4[i] % 2 == 0) {
+                newarr.push(arr4[i])
+            }
+        }
+        console.log(newarr)
+    }
+    arr.myFilter()
+
+    //myReduce
+
+
+    Array.prototype.myReduce = function (func) {
+        let arr3 = this;
+        var sum = 0;
+
+        for (var i = 0; i < arr3.length; i++) {
+            sum += arr3[i]
+        }
+        console.log(sum)
+    }
+
+    arr.myReduce()
+
+
+    // foreach
+    
+    Array.prototype.myForEach = function (func) {
+        let arr2 = this;
+        for (var i = 0; i < arr2.length; i++) {
+            let element = arr2[i]
+            let x = func(element)
+            console.log(x)
+        }
+
+    }
+    let y = arr.myForEach(function (el) {
+        return el * 2
+    })
+
+
+
+
+
+</script>
